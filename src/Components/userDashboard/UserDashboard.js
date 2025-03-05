@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Button } from '../ui/button/button';
 import { Card, CardContent } from '../ui/card/card';
-import {TicketForm} from '../../Components/ticketForm/TicketForm';
+
 import {TicketList} from '../../Components/ticketList/TicketList';
 
 class UserDashboard extends Component {
@@ -39,11 +39,11 @@ class UserDashboard extends Component {
             Logout
           </Button>
         </div>
-        <Card className="mb-8">
+        {/* <Card className="mb-8">
           <CardContent>
             <TicketForm onTicketCreated={this.fetchTickets} />
           </CardContent>
-        </Card>
+        </Card> */}
         <Card>
           <CardContent>
             <TicketList tickets={this.state.tickets} />
