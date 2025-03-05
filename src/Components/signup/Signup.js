@@ -17,7 +17,7 @@ class Signup extends Component {
         const { username, password, role } = this.state;
         this.setState({ loading: true, error: '' });
         try {
-            await axios.post('https://ticketing-backend-p827g1p7m-beamlakefelekes-projects.vercel.app/api/signup', { username, password, role });
+            await axios.post('https://ticketing-backend-git-main-beamlakefelekes-projects.vercel.app/api/signup', { username, password, role });
             this.setState({ redirectToLogin: true });
         } catch (err) {
             this.setState({ error: 'Failed to sign up. Please try again.' });

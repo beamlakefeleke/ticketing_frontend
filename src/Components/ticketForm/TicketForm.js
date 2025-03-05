@@ -21,7 +21,7 @@ class TicketForm extends Component {
             return;
         }
         try {
-            await axios.post('https://ticketing-backend-p827g1p7m-beamlakefelekes-projects.vercel.app/api/tickets', { title, description }, {
+            await axios.post('https://ticketing-backend-git-main-beamlakefelekes-projects.vercel.app/api/tickets', { title, description }, {
                 headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
             });
             this.setState({ title: '', description: '' });
