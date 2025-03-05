@@ -25,9 +25,11 @@ class Login extends Component {
         this.setState({ loading: true, error: '' });
 
         try {
-            const response = await axios.post('http://localhost:5000/api/login', { username, password });
-            
-            // Check if the response contains a token and role
+            const response = await axios.post('https://ticketing-backend-p827g1p7m-beamlakefelekes-projects.vercel.app/api/login', { username, password });
+
+            // Debugging the response from the server
+            console.log('Response from server:', response.data);
+
             const { token, role } = response.data;
             if (token) {
                 console.log('Token received:', token);
@@ -53,7 +55,7 @@ class Login extends Component {
         const { loading, redirectToDashboard, redirectToSignUp, error } = this.state;
 
         if (redirectToDashboard) {
-            return <Navigate to="/dashboard" />;
+            return window.location.href = '/dashboard';
         }
 
         if (redirectToSignUp) {

@@ -32,7 +32,7 @@ const AdminDashboard = () => {
         setLoadingUsers(true);
         const token = localStorage.getItem('token');
         try {
-            const response = await axios.get('http://localhost:5000/api/users', {
+            const response = await axios.get('https://ticketing-backend-p827g1p7m-beamlakefelekes-projects.vercel.app/api/users', {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setUsers(response.data); // Set the users in the state
@@ -51,7 +51,7 @@ const AdminDashboard = () => {
     const handleUpdateStatus = async (id, status) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.put(`http://localhost:5000/api/tickets/${id}`, { status }, {
+            await axios.put(`https://ticketing-backend-p827g1p7m-beamlakefelekes-projects.vercel.app/api/tickets/${id}`, { status }, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             dispatch(fetchAllTickets());
@@ -75,7 +75,7 @@ const AdminDashboard = () => {
 
         try {
             const token = localStorage.getItem('token');
-            await axios.put(`http://localhost:5000/api/users/${updatingUserId}`, {
+            await axios.put(`https://ticketing-backend-p827g1p7m-beamlakefelekes-projects.vercel.app/api/users/${updatingUserId}`, {
                 username: newUsername,
                 role: newRole
             }, {
@@ -98,7 +98,7 @@ const AdminDashboard = () => {
 
         try {
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:5000/api/users/${userId}`, {
+            await axios.delete(`https://ticketing-backend-p827g1p7m-beamlakefelekes-projects.vercel.app/api/users/${userId}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
 
